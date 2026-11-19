@@ -1,0 +1,42 @@
+html, body { margin: 0; min-height: 100%; background: #12081f; color: #f2ecff; font: 14px/1.45 system-ui, sans-serif; }
+.topbar { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; padding: 14px 20px; background: linear-gradient(90deg, #2b1055, #7b1e5b 55%, #c22e6e); border-bottom: 3px solid #ffb347; }
+.brand { display: flex; gap: 12px; align-items: center; }
+.brand-mark { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 10px; background: #ffb347; color: #160a24; font: 20px/1 Anton, sans-serif; letter-spacing: 1px; }
+.brand h1 { margin: 0; font: 26px/1.1 Anton, sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+.brand p { margin: 2px 0 0; color: #ffd9ec; font-size: 12.5px; }
+.top-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.size-label { display: flex; gap: 6px; align-items: center; font-weight: 600; }
+button, select, input[type=text] { font: inherit; color: #1d1b22; }
+button { padding: 9px 13px; border: 0; border-radius: 8px; background: #efeaf6; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: 0.45; cursor: default; }
+button.primary { background: #ffb347; color: #160a24; }
+select, input[type=text] { padding: 8px; border: 1px solid #c9c4d1; border-radius: 6px; background: #fff; }
+.app { display: flex; gap: 20px; padding: 20px; align-items: flex-start; }
+.stage { flex: 1 1 auto; min-width: 0; }
+#preview { width: 100%; height: auto; display: block; background: #160a24; border-radius: 10px; box-shadow: 0 10px 34px rgba(0, 0, 0, 0.5); cursor: grab; }
+#preview:active { cursor: grabbing; }
+#status { color: #c9b8e8; font-size: 13px; }
+.tip { color: #8f7fb8; font-size: 12.5px; margin: 4px 0 0; }
+.controls { flex: 0 0 320px; display: flex; flex-direction: column; gap: 18px; }
+.controls section { background: #1e1032; border: 1px solid #3d2560; border-radius: 10px; padding: 14px; }
+.controls h2 { margin: 0 0 10px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #ffb347; }
+.controls label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; margin-bottom: 10px; }
+.controls label:last-child { margin-bottom: 0; }
+.pick-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.pick { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; background: #2a1845; color: #f2ecff; border: 2px solid transparent; border-radius: 8px; padding: 9px 10px; }
+.pick:hover { border-color: #7b5bb0; }
+.pick.active { border-color: #ffb347; background: #3a2360; }
+.pick-name { font-weight: 700; font-size: 13px; }
+.pick-hint { font-size: 11.5px; color: #c9b8e8; }
+.swatch { display: block; width: 100%; height: 22px; border-radius: 5px; }
+.slot { border: 1px dashed #5b4391; border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+.slot:last-child { margin-bottom: 0; }
+.slot-label { display: block; font-weight: 700; margin-bottom: 8px; }
+.slot label { margin-bottom: 8px; }
+.slot label:last-child { margin-bottom: 0; }
+#panel-info { margin: 0 0 10px; color: #c9b8e8; }
+input[type=range] { width: 100%; accent-color: #ffb347; }
+body.shot-cover .topbar, body.shot-cover .controls, body.shot-cover #status { display: none; }
+body.shot-cover .app { padding: 0; display: block; }
+body.shot-cover .stage { width: 100vw; height: 100vh; }
+body.shot-cover #preview { width: 100vw; height: 100vh; border-radius: 0; box-shadow: none; object-fit: fill; }

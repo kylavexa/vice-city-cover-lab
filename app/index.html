@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231a0b2e'/%3E%3Ccircle cx='32' cy='26' r='12' fill='%23ff7b54'/%3E%3Crect x='10' y='40' width='44' height='4' fill='%23ff2e88'/%3E%3Crect x='10' y='48' width='44' height='4' fill='%2300e5ff'/%3E%3C/svg%3E">
+<title>Vice City Cover Lab — GTA-style cover maker</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">VC</span>
+    <div>
+      <h1>Vice City Cover Lab</h1>
+      <p>Your photo + a caption → a GTA-style poster. Offline, nothing uploads.</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <label class="size-label">Size
+      <select id="size">
+        <option value="wide">Wide · 1920 × 1080</option>
+        <option value="square">Square · 1080 × 1080</option>
+        <option value="story">Story · 1080 × 1350</option>
+      </select>
+    </label>
+    <button id="undo" type="button" disabled>Undo</button>
+    <button id="redo" type="button" disabled>Redo</button>
+    <button id="export" type="button" class="primary">Export PNG</button>
+    <button id="export-all" type="button">Export all 3</button>
+  </div>
+</header>
+<main class="app">
+  <section class="stage">
+    <canvas id="preview" width="1920" height="1080" aria-label="The cover preview"></canvas>
+    <p id="status" role="status">Click a panel to select it, drag to move its photo, scroll to zoom.</p>
+    <p class="tip">Tip: Ctrl+Z undoes a change · drag a panel to move its photo · scroll over the preview to zoom it.</p>
+  </section>
+  <aside class="controls">
+    <section>
+      <h2>1 · Layout</h2>
+      <div id="layouts" class="pick-grid"></div>
+    </section>
+    <section>
+      <h2>2 · Colour grade</h2>
+      <div id="grades" class="pick-grid"></div>
+    </section>
+    <section>
+      <h2>3 · Caption</h2>
+      <label>Title <input id="title" type="text" maxlength="24" value="NEON COAST"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="30" value="Vice City"></label>
+      <label>Badge <input id="badge" type="text" maxlength="20" value="EST. 2026"></label>
+    </section>
+    <section>
+      <h2>4 · Photos</h2>
+      <div class="slot" data-slot="0">
+        <span class="slot-label">Photo A · Sample · Boulevard</span>
+        <label>Upload <input type="file" accept="image/*"></label>
+        <label>Sample
+          <select>
+            <option value="">Keep current</option>
+            <option value="boulevard">Boulevard</option>
+            <option value="pier">Pier</option>
+          </select>
+        </label>
+      </div>
+      <div class="slot" data-slot="1">
+        <span class="slot-label">Photo B · Sample · Pier</span>
+        <label>Upload <input type="file" accept="image/*"></label>
+        <label>Sample
+          <select>
+            <option value="">Keep current</option>
+            <option value="boulevard">Boulevard</option>
+            <option value="pier">Pier</option>
+          </select>
+        </label>
+      </div>
+      <div class="slot" data-slot="2">
+        <span class="slot-label">Photo C · none yet</span>
+        <label>Upload <input type="file" accept="image/*"></label>
+        <label>Sample
+          <select>
+            <option value="">Keep current</option>
+            <option value="boulevard">Boulevard</option>
+            <option value="pier">Pier</option>
+          </select>
+        </label>
+      </div>
+    </section>
+    <section>
+      <h2>5 · Selected panel</h2>
+      <p id="panel-info">Panel 1 · Sunset Grid · photo A</p>
+      <label>Zoom <input id="zoom" type="range" min="50" max="300" value="100"></label>
+      <label>Photo in this panel
+        <select id="slot">
+          <option value="0">Photo A</option>
+          <option value="1">Photo B</option>
+          <option value="2">Photo C</option>
+        </select>
+      </label>
+      <button id="center-panel" type="button">Centre photo</button>
+    </section>
+    <section>
+      <h2>6 · Finish</h2>
+      <label><input type="checkbox" data-effect="grain" checked> Film grain</label>
+      <label><input type="checkbox" data-effect="vignette" checked> Vignette</label>
+      <label><input type="checkbox" data-effect="halftone" checked> Halftone title block</label>
+      <label><input type="checkbox" data-effect="palm" checked> Palm silhouettes</label>
+    </section>
+  </aside>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
