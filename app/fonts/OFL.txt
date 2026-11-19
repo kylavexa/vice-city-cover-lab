@@ -1,0 +1,8 @@
+Fonts in this folder (anton.woff2, bebas-neue.woff2, pacifico.woff2) are
+the SIL Open Font License versions of Anton, Bebas Neue and Pacifico,
+downloaded from Google Fonts and shipped here so the app works offline.
+See https://openfontlicense.org for the license text.
+
+- Anton (version 27, OFL) — the big poster title.
+- Bebas Neue (version 16, OFL) — the letterspaced kicker.
+- Pacifico (version 23, OFL) — the "Vice City" script flourish.

@@ -6,6 +6,13 @@
 
 Vice City Cover Lab turns a photo and a caption into a multi-panel GTA-style poster: eight layouts, eight colour grades, a halftone title block, grain and vignette, and PNG export in 1080 x 1080, 1080 x 1350 or 1920 x 1080. The app is plain static files a desktop browser loads offline (app/index.html and its ES modules, no library and no network request).
 
+## Features
+
+- 8 multi-panel layouts (grid, hero bleed, tilted snaps, neon strip, nine-panel, duo split, poster frame, boulevard) and 8 colour grades (including a full-grayscale grade)
+- 3 photo slots — upload your own or use the two built-in samples; click a panel to crop it, drag to pan, scroll to zoom
+- Halftone title block with a kicker, a big Anton title and a Pacifico "Vice City" flourish, plus a badge ribbon and palm silhouettes
+- Undo/redo (25 steps), and PNG export in all three sizes at once
+
 ## Run it
 
 ```sh
